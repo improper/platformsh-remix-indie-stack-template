@@ -9,6 +9,12 @@
 
 This template demonstrates how to deploy a Remix app derived from `npx create-remix --template remix-run/indie-stack` to the cloud on Platform.sh
 
+## Changes
+
+* Adds `.platform/routes.yaml` so that we can point domains where we want them to go.
+* Adds `.platform.app.yaml` so that we can define what our servers & deployments should look like.
+* Adds `.environment` so that we can set our required Remix server environment variables on our host machine.
+
 ## Remix Indie Stack
 
 ![The Remix Indie Stack](https://repository-images.githubusercontent.com/465928257/a241fa49-bd4d-485a-a2a5-5cb8e4ee0abf)
