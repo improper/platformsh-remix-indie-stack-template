@@ -1,0 +1,2 @@
+export DATABASE_URL="file:./data/data.db?connection_limit=1"
+export SESSION_SECRET=$PLATFORM_PROJECT_ENTROPY

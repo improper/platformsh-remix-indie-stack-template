@@ -8,6 +8,7 @@ web:
     start: npm run start
   locations:
     '/':
+      root: public
       allow: true
       scripts: false
       passthru: true
@@ -21,3 +22,5 @@ hooks:
   build: |
     npm install
     npm run build
+  deploy: |
+    npx prisma migrate deploy
