@@ -1,6 +1,8 @@
 name: remix-app
 type: nodejs:14
 
+disk: 5000
+
 web:
   commands:
     start: npm run start
@@ -9,6 +11,11 @@ web:
       allow: true
       scripts: false
       passthru: true
+
+mounts:
+  'prisma/data':
+    source: local
+    source_path: 'data'
 
 hooks:
   build: |
