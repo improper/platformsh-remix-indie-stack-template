@@ -1,4 +1,15 @@
-# Remix Indie Stack
+# Platform.sh Basic React Remix Template
+
+<!-- Deploy on Platform.sh button -->
+<p align="center">
+    <a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/improper/platformsh-remix-indie-stack-template/main/.platform.template.yaml&utm_content=metabase&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform">
+        <img src="https://platform.sh/images/deploy/lg-blue.svg" alt="Deploy on Platform.sh" width="175px" />
+    </a>
+</p>
+
+This template demonstrates how to deploy a Remix app derived from `npx create-remix --template remix-run/indie-stack` to the cloud on Platform.sh
+
+## Remix Indie Stack
 
 ![The Remix Indie Stack](https://repository-images.githubusercontent.com/465928257/a241fa49-bd4d-485a-a2a5-5cb8e4ee0abf)
 
@@ -8,7 +19,7 @@ Learn more about [Remix Stacks](https://remix.run/stacks).
 npx create-remix --template remix-run/indie-stack
 ```
 
-## What's in the stack
+### What's in the stack
 
 - [Fly app deployment](https://fly.io) with [Docker](https://www.docker.com/)
 - Production-ready [SQLite Database](https://sqlite.org)
@@ -26,13 +37,13 @@ npx create-remix --template remix-run/indie-stack
 
 Not a fan of bits of the stack? Fork it, change it, and use `npx create-remix --template your/repo`! Make it your own.
 
-## Quickstart
+### Quickstart
 
 Click this button to create a [Gitpod](https://gitpod.io) workspace with the project set up and Fly pre-installed
 
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 
-## Development
+### Development
 
 - This step only applies if you've opted out of having the CLI install dependencies for you:
 
@@ -59,7 +70,7 @@ The database seed script creates a new user with some data you can use to get st
 - Email: `rachel@remix.run`
 - Password: `racheliscool`
 
-### Relevant code:
+#### Relevant code:
 
 This is a pretty simple note-taking app, but it's a good example of how you can build a full stack app with Prisma and Remix. The main functionality is creating users, logging in and out, and creating and deleting notes.
 
@@ -67,7 +78,7 @@ This is a pretty simple note-taking app, but it's a good example of how you can 
 - user sessions, and verifying them [./app/session.server.ts](./app/session.server.ts)
 - creating, and deleting notes [./app/models/note.server.ts](./app/models/note.server.ts)
 
-## Deployment
+### Deployment
 
 This Remix Stack comes with two GitHub Actions that handle automatically deploying your app to production and staging environments.
 
@@ -124,21 +135,21 @@ Prior to your first deployment, you'll need to do a few things:
 
 Now that everything is set up you can commit and push your changes to your repo. Every commit to your `main` branch will trigger a deployment to your production environment, and every commit to your `dev` branch will trigger a deployment to your staging environment.
 
-### Connecting to your database
+#### Connecting to your database
 
 The sqlite database lives at `/data/sqlite.db` in your deployed application. You can connect to the live database by running `fly ssh console -C database-cli`.
 
-### Getting Help with Deployment
+#### Getting Help with Deployment
 
 If you run into any issues deploying to Fly, make sure you've followed all of the steps above and if you have, then post as many details about your deployment (including your app name) to [the Fly support community](https://community.fly.io). They're normally pretty responsive over there and hopefully can help resolve any of your deployment issues and questions.
 
-## GitHub Actions
+### GitHub Actions
 
 We use GitHub Actions for continuous integration and deployment. Anything that gets into the `main` branch will be deployed to production after running tests/build/etc. Anything in the `dev` branch will be deployed to staging.
 
-## Testing
+### Testing
 
-### Cypress
+#### Cypress
 
 We use Cypress for our End-to-End tests in this project. You'll find those in the `cypress` directory. As you make changes, add to an existing file or create a new file in the `cypress/e2e` directory to test your changes.
 
@@ -163,18 +174,18 @@ afterEach(() => {
 
 That way, we can keep your local db clean and keep your tests isolated from one another.
 
-### Vitest
+#### Vitest
 
 For lower level tests of utilities and individual components, we use `vitest`. We have DOM-specific assertion helpers via [`@testing-library/jest-dom`](https://testing-library.com/jest-dom).
 
-### Type Checking
+#### Type Checking
 
 This project uses TypeScript. It's recommended to get TypeScript set up for your editor to get a really great in-editor experience with type checking and auto-complete. To run type checking across the whole project, run `npm run typecheck`.
 
-### Linting
+#### Linting
 
 This project uses ESLint for linting. That is configured in `.eslintrc.js`.
 
-### Formatting
+#### Formatting
 
 We use [Prettier](https://prettier.io/) for auto-formatting in this project. It's recommended to install an editor plugin (like the [VSCode Prettier plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)) to get auto-formatting on save. There's also a `npm run format` script you can run to format all files in the project.
